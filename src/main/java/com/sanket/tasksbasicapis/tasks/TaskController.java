@@ -127,7 +127,7 @@ public class TaskController {
         // give preference to completed param
         if (completed != null) {
             Stream<Task> completedTasksStream = tasks.stream().filter(task -> task.getIsCompleted().equals(completed));
-            completedTasksStream.collect(Collectors.toList()).forEach(task -> tasks.remove(task));
+            completedTasksStream.toList().forEach(task -> tasks.remove(task));
             String isCompleted = completed ? "completed" : "incomplete";
             return new ResponseEntity<>(new Message("All " + isCompleted + " tasks are deleted successfully"), HttpStatus.OK);
         }
