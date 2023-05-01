@@ -56,3 +56,136 @@ Make a Task Manager with the following features:
 #### Solution
     
 - This repository contains the solution for this assignment
+
+#### APIs
+#### 1. create a new task 
+   - **Request Type:** POST
+   - **URL:** http://localhost:8080/tasks
+   - **Request payload:** 
+     ```
+       {
+          "name": String,
+          "dueDate": String,
+          "isCompleted": Boolean
+       }
+     ```
+   - **Response payload**:
+       ```
+       {
+          "id": Integer,
+          "name": String,
+          "dueDate": Date,
+          "isCompleted": Boolean
+       }
+       ```
+
+#### 2. get all tasks
+   - **Request Type:** GET
+   - **URL**: http://localhost:8080/tasks
+   - **Response payload**:
+     ```
+     [{
+          "id": Integer,
+          "name": String,
+          "dueDate": Date,
+          "isCompleted": Boolean
+     },
+     {
+          "id": Integer,
+          "name": String,
+          "dueDate": Date,
+          "isCompleted": Boolean
+     }]
+     ``` 
+     
+#### 3. find task by id 
+   - **Request Type:** GET
+   - **URL**: http://localhost:8080/tasks/{id}
+   - **Response payload**:
+     ```
+     {
+        "id": Integer,
+        "name": String,
+        "dueDate": Date,
+        "isCompleted": Boolean
+     }
+     ```
+
+#### 4. filter tasks by completed status or sort tasks by due date
+   - **Description:** 
+     - **completed** path parameter values can be either _true_ or _false_
+     - **sort** path parameter values can be either _dateAsc_ or _dateDesc_
+     - both of these parameters are optional
+   - **Request Type:** GET
+   - **URL**: http://localhost:8080/tasks?completed=true&sort=dateDesc
+   - **Response payload**:
+     ```
+     [{
+          "id": Integer,
+          "name": String,
+          "dueDate": Date,
+          "isCompleted": Boolean
+     },
+     {
+          "id": Integer,
+          "name": String,
+          "dueDate": Date,
+          "isCompleted": Boolean
+     }]
+     ```
+
+#### 5. update a task with due date and completed status
+   - **Request Type:** PATCH
+   - **URL**: http://localhost:8080/tasks/{id}
+   - **Request payload:** 
+     ```
+     {       
+        "dueDate": String,
+        "isCompleted": Boolean
+     }
+     ```
+   - **Response payload**:
+     ```
+     {
+        "id": Integer,
+        "name": String,
+        "dueDate": Date,
+        "isCompleted": Boolean
+     }
+     ```
+     
+#### 6. delete a task by id
+   - **Request Type:** DELETE
+   - **URL**: http://localhost:8080/tasks/{id}
+   - **Response payload**:
+     1. Success Response
+     ```
+     {
+         "message": String          
+     }
+     ```
+     2. Error Response
+     ```
+     {
+         "errorMessage": String          
+     }
+     ```
+
+#### 7. delete multiple tasks by completed status value
+   - **Description:**
+     - **completed** path parameter values can be either _true_ or _false_
+   - **Request Type:** DELETE
+   - **URL**: http://localhost:8080/tasks?completed=true
+   - **Response payload**:
+      1. Success Response
+     ```
+     {
+          "message": String          
+     }
+     ```
+      2. Error Response
+     ```
+     {
+         "errorMessage": String          
+     }
+     ```
