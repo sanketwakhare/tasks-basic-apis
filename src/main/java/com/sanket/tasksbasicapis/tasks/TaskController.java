@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.sanket.tasksbasicapis.services.DateService.isValid;
@@ -156,7 +156,7 @@ public class TaskController {
 
         if (sortType != null) {
             if (sortType.equals("dateAsc")) {
-                filteredTasks.sort((t1, t2) -> t1.getDueDate().compareTo(t2.getDueDate()));
+                filteredTasks.sort(Comparator.comparing(Task::getDueDate));
             } else if (sortType.equals("dateDesc")) {
                 filteredTasks.sort((t1, t2) -> t2.getDueDate().compareTo(t1.getDueDate()));
             } else {
