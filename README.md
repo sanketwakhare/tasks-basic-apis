@@ -65,8 +65,7 @@ Make a Task Manager with the following features:
      ```
        {
           "name": String,
-          "dueDate": String,
-          "isCompleted": Boolean
+          "dueDate": Date,
        }
      ```
    - **Response payload**:
@@ -135,12 +134,16 @@ Make a Task Manager with the following features:
      ```
 
 #### 5. update a task with due date and completed status
+   - **Description:**
+     - **isCompleted** request parameter values can be either _true_ or _false_
+     - **dueDate** request parameter value is of type Date 
+     - both of these parameters are optional
    - **Request Type:** PATCH
    - **URL**: http://localhost:8080/tasks/{id}
    - **Request payload:** 
      ```
      {       
-        "dueDate": String,
+        "dueDate": Date,
         "isCompleted": Boolean
      }
      ```
@@ -174,6 +177,7 @@ Make a Task Manager with the following features:
 #### 7. delete multiple tasks by completed status value
    - **Description:**
      - **completed** path parameter values can be either _true_ or _false_
+     - this parameter value is required to delete multiple tasks
    - **Request Type:** DELETE
    - **URL**: http://localhost:8080/tasks?completed=true
    - **Response payload**:
