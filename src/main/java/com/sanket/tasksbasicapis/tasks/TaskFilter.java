@@ -1,22 +1,19 @@
 package com.sanket.tasksbasicapis.tasks;
 
 import com.sanket.tasksbasicapis.exceptions.InvalidSortTypeException;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
+@Data
+@AllArgsConstructor
 public class TaskFilter {
 
     Boolean isCompleted;
     String sortType;
-
-    public TaskFilter(Boolean isCompleted, String sortType) {
-        this.isCompleted = isCompleted;
-        this.sortType = sortType;
-    }
 
     public List<Task> filterTasks(List<Task> tasks) {
         if (this.isCompleted != null) {
