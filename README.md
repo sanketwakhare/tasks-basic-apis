@@ -1,14 +1,15 @@
-# Spring Boot - Task APIs v1
+# Spring Boot - Task APIs v2
 
 ## Development
 
 ### Test API
 
-There is [a postman collection](./task_manager_apis.postman_collection.json) to test the API
+- v1 -> There is [a postman collection](./task_manager_apis.postman_collection.json) to test the API
+- v2 -> There is [a postman collection](./task_manager_apis_v2.postman_collection.json) to test the API
 
 ## Assignment
 
-### 03. Make a Task Manager (only  Controller)
+### 03. Make a Task Manager (only  Controller) (v1)
 
 #### Project Description
 
@@ -53,9 +54,23 @@ Make a Task Manager with the following features:
 2. Bulk Delete tasks which are completed to be implemented
     1. `DELETE /tasks?completed=true` should delete all completed tasks
 
+### 04. Make a Task Manager (with Service layer and exception handling)  (v2)
+
+1. Implement all TODOs mentioned in the code
+   1. TODO 01: implement PATCH task
+   2. TODO 02: implement DELETE task
+   3. TODO 03: create a TaskResponseDTO and do not return Task entity directly
+   4. TODO 04: generate error for invalid dueDate (before today)
+   5. TODO 05: generate error for invalid name (less than 5 char, or more than 100 char)
+   6. TODO 06: generate error for invalid dueDate (before today)
+   7. TODO 07: also handle IllegalArgumentException (due date, name etc)
+   8. TODO 08: in error responses send the error message in a JSON object
+
 #### Solution
-    
-- This repository contains the solution for this assignment
+
+- master repository contains the latest code
+- This repository [task-apis-v1](https://github.com/sanketwakhare/tasks-basic-apis/tree/task-apis-v1) contains the solution for assignment 03    
+- This repository [task-apis-v2](https://github.com/sanketwakhare/tasks-basic-apis/tree/task-apis-v2) contains the solution for assignment 04
 
 #### APIs
 #### 1. create a new task 
