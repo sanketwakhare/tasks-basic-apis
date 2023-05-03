@@ -1,6 +1,6 @@
 package com.sanket.tasksbasicapis.common;
 
-public class ErrorResponse {
+public class ErrorResponse extends Response {
 
     private String errorMessage;
 

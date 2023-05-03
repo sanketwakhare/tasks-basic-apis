@@ -1,6 +1,6 @@
 package com.sanket.tasksbasicapis.common;
 
-public class Message {
+public class Message extends Response {
 
     private String message;
 
