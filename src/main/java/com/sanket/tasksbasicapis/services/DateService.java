@@ -26,4 +26,9 @@ public class DateService {
             return null;
         }
     }
+
+    public static String toString(Date date) {
+        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
 }

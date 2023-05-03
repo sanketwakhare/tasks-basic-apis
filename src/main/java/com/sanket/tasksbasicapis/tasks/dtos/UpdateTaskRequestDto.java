@@ -1,30 +1,15 @@
 package com.sanket.tasksbasicapis.tasks.dtos;
 
+import jakarta.annotation.Nullable;
+import lombok.Data;
+
+import javax.annotation.processing.SupportedOptions;
+import java.util.Date;
+
+@Data
 public class UpdateTaskRequestDto {
-    String dueDate;
+    @Nullable
+    Date dueDate;
+    @Nullable
     Boolean isCompleted;
-
-    UpdateTaskRequestDto() {
-    }
-
-    UpdateTaskRequestDto(String dueDate, Boolean isCompleted) {
-        this.dueDate = dueDate;
-        this.isCompleted = isCompleted;
-    }
-
-    public String getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public Boolean getIsCompleted() {
-        return isCompleted;
-    }
-
-    public void setIsCompleted(Boolean isCompleted) {
-        this.isCompleted = isCompleted;
-    }
 }
