@@ -5,7 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class CreateTaskRequestDto {
+public class TaskResponseDto {
+    Integer id;
     String name;
     Date dueDate;
+    Boolean isCompleted;
 }
